@@ -1,2 +1,2 @@
 # json_parser
-Implementacion de un "pareseador" de JSON a objeto js de forma "manual".
+Implementacion de un "parseador" de JSON a objeto js de forma "manual".
