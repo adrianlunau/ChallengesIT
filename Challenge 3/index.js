@@ -28,13 +28,26 @@ const magui = new Usuario(5, "Magui", "Simspon", 1, "EEUU");
 
 const usuarios = [homero, marge, bart, lisa, magui];
 
+function findById(id) {
+    for (usuario of usuarios) {
+        if (usuario.id === id) {
+            return usuario;
+        }     
+    }
+    return new Error(404, "No existe usuario con id:" + id);
+}
 
 const requestListener = function(req, res) {
     res.setHeader("Content-Type", "application/json");
+    let id = parseInt(req.url.slice(10));            
     switch (req.url) {
         case "/usuarios":
             res.writeHead(200);
             res.end(JSON.stringify(usuarios));
+            break;
+        case "/usuarios/" + id:
+            res.writeHead(200);
+            res.end(JSON.stringify(findById(id)));
             break;
         default:
             res.writeHead(404);
