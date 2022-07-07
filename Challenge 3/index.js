@@ -3,6 +3,7 @@ const http = require("http");
 const host = "localhost";
 const port = 8000;
 
+// Creo la clase Usuario con su constructor
 class Usuario {
     constructor(id, firstname, lastname, age, country) {
         this.id = id;
@@ -13,6 +14,7 @@ class Usuario {
     }
 }
 
+// Creo la clase Error con su constructor.
 class Error {
     constructor(statusCode, message) {
         this.statusCode = statusCode;
@@ -20,6 +22,7 @@ class Error {
     }
 }
 
+// Instancio 5 objetos del tipo Usuario.
 const homero = new Usuario(1, "Homero", "Simspon", 39, "EEUU");
 const marge = new Usuario(2, "Marge", "Simspon", 36, "EEUU");
 const bart = new Usuario(3, "Bart", "Simspon", 11, "EEUU");
@@ -28,6 +31,8 @@ const magui = new Usuario(5, "Magui", "Simspon", 1, "EEUU");
 
 const usuarios = [homero, marge, bart, lisa, magui];
 
+
+// Metodo para buscar un usuario mediante su ID.
 function findById(id) {
     for (usuario of usuarios) {
         if (usuario.id === id) {
@@ -37,6 +42,7 @@ function findById(id) {
     return new Error(404, "No existe usuario con id:" + id);
 }
 
+// Escucha solicitudes HTTP, y devuelve un response dependiendo de la URI.
 const requestListener = function(req, res) {
     res.setHeader("Content-Type", "application/json");
     let id = parseInt(req.url.slice(10));            
@@ -46,7 +52,7 @@ const requestListener = function(req, res) {
             res.end(JSON.stringify(usuarios));
             break;
         case "/usuarios/" + id:
-            res.writeHead(200);
+            findById(id) instanceof Usuario ? res.writeHead(200) : res.writeHead(404);
             res.end(JSON.stringify(findById(id)));
             break;
         default:
@@ -55,6 +61,7 @@ const requestListener = function(req, res) {
     }
 }
 
+// Crea y levanta el servidor.
 const server = http.createServer(requestListener);
 server.listen(port, host, () => {
     console.log(`El servidor se está ejecutando en http://${host}:${port}`);
