@@ -1,0 +1,59 @@
+
+# ----------   Users   -----------
+GET http://localhost:3000/api/users
+
+
+###
+GET http://localhost:3000/api/users/62d1b02c6d428ad99b664712
+
+###
+POST http://localhost:3000/api/users/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "name" : "Mrs. Dennis Schulist",
+    "username" : "Leopoldo_Corkery",
+    "email" : "Karley_Dach@jasper.info",
+    "company" : "62d1bef722e86a4886898bfd"
+}
+
+###
+PUT http://localhost:3000/api/users/62d1dc6522e86a4886898c17 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name" : "Kurtis Weissnat",
+    "username" : "Elwyn.Skiles",
+    "email" : "Telly.Hoeger@billy.biz",
+    "company" : "62d1bef722e86a4886898bfd"
+}
+
+###
+DELETE http://localhost:3000/api/users/62cedd4d5f01dcbaaf694492
+
+
+# ----------   Companies   -----------
+###
+GET http://localhost:3000/api/companies
+
+###
+GET http://localhost:3000/api/companies/62d1bef722e86a4886898bfd
+
+###
+POST http://localhost:3000/api/companies/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "name" : "Globant"
+}
+
+###
+PUT http://localhost:3000/api/companies/62d1a19a227018f71e322346 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name" : "ESolutions"
+}
+
+###
+DELETE http://localhost:3000/api/companies/62d19cbdacbcf4c15ddbc84a
