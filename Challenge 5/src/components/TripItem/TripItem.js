@@ -24,9 +24,18 @@ const useStyles = createUseStyles({
 
 })
 
+const currencyOptions = {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+}
+
 export default function TripItem({ image, name, description, price, button }) {
     const classes = useStyles();
     const { setTrips } = useContext(TripContext);
+
+    function getTotal(total) {
+        return total.toLocaleString(undefined, currencyOptions);
+    }
 
     return (
         <div>
@@ -34,7 +43,7 @@ export default function TripItem({ image, name, description, price, button }) {
             <img className={classes.image} src={image} alt={name} aria-label={name}></img>
             <h3>{name}</h3>
             <p>{description}</p>
-            <span>$ {price}</span>
+            <span>$ {getTotal(price)}</span>
         </div>
             <div  className={classes.buttonWrapper}><TripButton name={button} action={setTrips}/></div>
         </div>

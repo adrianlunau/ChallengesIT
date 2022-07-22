@@ -67,11 +67,11 @@ function reducer(state, action) {
             if (ultimaOperacion === "comprar" && ultimo==="Ciudad") {
                 sendMail("cancelarCompra");
                 carro.pop();
-                //ultimaOperacion = "cancelar"
+                ultimaOperacion = "cancelar";
                 return carro;
             }
             if (ultimaOperacion === "cancelar") {
-                console.log("No puede realizar mas de una cancelacion de forma consecutiva.");
+                console.log("No puede realizar mas de una cancelación de forma consecutiva.");
                 return carro;
             }
             return carro;
@@ -88,7 +88,7 @@ export default function TripMaker() {
         <div className={classes.wrapper}>
             <TripContext.Provider value={{ trips, setTrips }}>
                 <div className={classes.cancel}>
-                <TripButton name="cancelar" action={() => setTrips("cancelar")}/>
+                <TripButton name="cancelar" action={setTrips}/>
                 </div>
 
                 <TripBuilder/>
