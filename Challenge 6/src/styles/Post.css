@@ -1,0 +1,12 @@
+.wrapper-post {
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: black solid 1px;
+    padding: 10px;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.wrapper-post:hover {
+    background-color: white;
+}

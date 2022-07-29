@@ -1,0 +1,19 @@
+.wrapper-allpost {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-allpost {
+    width: 200px;
+    margin-top: 20px;
+    border: none;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 2px solid black;
+    border-radius: 10px;
+    font-weight: 600;
+}

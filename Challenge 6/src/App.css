@@ -1,0 +1,8 @@
+.wrapper {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/007/385/477/non_2x/blank-notebook-paper-sheet-with-lines-illustration-vector.jpg");
+    height: 98vh;
+}
