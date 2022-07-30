@@ -16,8 +16,12 @@ export default function Login() {
         setError(false);
         const {email, password} = event.target
         await getUser(email, password).then((user)=> {
-            user ? setOnLogin(true) : setError(true)
-            setUser(user)
+            if(user) {
+                setOnLogin(true)
+                setUser(user)
+            } else {
+                setError(true)
+            }
         })
     }
 

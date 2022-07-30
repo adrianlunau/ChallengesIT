@@ -31,8 +31,6 @@ export default function AllPost() {
 
     const savePost = event => {
         event.preventDefault();
-        console.log(title);
-        console.log(content);
         setPost(title, content).then(() => {
             setTitle("");
             setContent("");

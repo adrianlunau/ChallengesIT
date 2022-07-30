@@ -4,6 +4,11 @@
       "id": 1,
       "title": "Mi primer historia",
       "content": "Esta es la primera historia"
+    },
+    {
+      "title": "Segunda historia",
+      "content": "Ford Argentina debe ser la automotriz que más autos nos prestó en toda la historia del Ranking Autoblog (ahora llamado Ranking Motor1). En 40 episodios de esta sección especial, por el Circuito 6 del Gálvez y las manos de nuestro piloto oficial, Paul \"Coloflow\" Szebesta pasaron los siguientes modelos: Maverick (leer crítica), F-150 Lariat (leer crítica), Mustang GT (leer crítica) y Mustang Mach 1, que se mantiene al tope de la tabla de posiciones de autos standard (leer crítica y ver tabla abajo)",
+      "id": 2
     }
   ],
   "users": [
