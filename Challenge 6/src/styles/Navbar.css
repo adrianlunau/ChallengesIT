@@ -4,6 +4,7 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     background-color: white;
     border: rgb(0, 0, 34) solid 1px;
     margin: 2em;
@@ -17,6 +18,8 @@
 
 .wrapper-navbar ul{
     list-style: none;
+    display: flex;
+    gap: 30px;
 
 }
 
@@ -28,4 +31,8 @@
 
 .wrapper-navbar ul li a:hover {
     color: rgb(92, 5, 5);
+}
+
+span{
+    font-weight: 600;
 }

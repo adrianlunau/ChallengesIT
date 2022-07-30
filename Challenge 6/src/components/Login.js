@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Navigate } from "react-router-dom";
 import { getUser } from "../services/UserService";
+import UserContext from "../contexts/UserContext";
 import "../styles/Login.css"
 
-export default function Login() {
-
-    // TODO: agregar hooks
-    
+export default function Login() {    
 
     const [onLogin, setOnLogin] = useState(false);
     const [error, setError] = useState(false);
+    const {setUser} = useContext(UserContext);
 
 
    async function handleSubmit(event) {
@@ -18,10 +17,8 @@ export default function Login() {
         const {email, password} = event.target
         await getUser(email, password).then((user)=> {
             user ? setOnLogin(true) : setError(true)
+            setUser(user)
         })
-        
-        // Si el usuario existe, redirijo a AllPost
-        // Si el usuario no existe, doy un mensaje de error y me quedo en el login (se puede agregar un alerta)
     }
 
     return(
