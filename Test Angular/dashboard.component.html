@@ -1,0 +1,10 @@
+<h2>Cursos en desarrollo</h2>
+<div class="courses-menu">
+    <li *ngFor="let course of courses">
+        <a routerLink="/courses/{{course.id}}">{{course.name}}</a>
+        <button type="button"
+                (click)="removeFromInProgress(course)">
+            Remover
+        </button>
+    </li>
+</div>
